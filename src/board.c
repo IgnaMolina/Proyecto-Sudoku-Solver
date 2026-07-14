@@ -77,7 +77,7 @@ bool load_board(sudoku *board, const char *filename){
 void print_board(const sudoku *board){
     for (int f = 0; f < BOARD_SIZE; f++ ){
         if(f % 3 == 0 && f != 0){
-            printf("---+---+---\n");
+            printf("------+------+------\n");
         }   
         for(int c = 0; c < BOARD_SIZE; c++){
             if(c != 0){
@@ -85,9 +85,9 @@ void print_board(const sudoku *board){
                 printf("|");
             }}
             if(board -> cells[f][c] == 0){
-                printf(".");
+                printf(". ");
             }else{
-            printf("%d", board -> cells[f][c]);}
+            printf("%d ", board -> cells[f][c]);}
         } printf("\n");
     } 
 }
