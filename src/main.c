@@ -3,10 +3,15 @@
 #include "solver.h"
 
 
-int main(void){
+int main(int argc, char *argv[]){
     sudoku board;
-    if(!load_board(&board, "sudoku.txt")){
-        printf("Error: carga del archivo incorrecta.\n");
+    if (argc != 2) {
+        printf("Uso: %s <archivo>\n", argv[0]);
+        return 1;
+    }
+
+    if (!load_board(&board, argv[1])) {
+        printf("Error al cargar el archivo.\n");
         return 1;
     }
     printf("Tablero inicial:\n");

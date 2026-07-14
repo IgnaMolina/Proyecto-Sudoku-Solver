@@ -4,7 +4,6 @@
 #include "board.h"
 
 bool is_valid_move(const sudoku *board, const int num, const int columna, const int fila){
-    int num_tablero;
     //Chequeo la fila
     for(int i = 0; i < BOARD_SIZE; i++){
         if(board -> cells[i][columna] == num ){

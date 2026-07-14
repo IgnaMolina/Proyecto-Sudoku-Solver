@@ -6,8 +6,7 @@
 
 bool load_board(sudoku *board, const char *filename){
     //1. Abro el archivo.
-    FILE *archivo;
-    archivo =fopen(filename,"r");
+    FILE *archivo = fopen(filename, "r");
     //2. Compruebo que el archivo se abrio sin ningun error.
     if (archivo == NULL){
         printf("Error: no se pudo leer el archivo- \n");
@@ -76,7 +75,6 @@ bool load_board(sudoku *board, const char *filename){
     return true;
 }
 void print_board(const sudoku *board){
-    int valor_a_imprimir;
     for (int f = 0; f < BOARD_SIZE; f++ ){
         if(f % 3 == 0 && f != 0){
             printf("---+---+---\n");
